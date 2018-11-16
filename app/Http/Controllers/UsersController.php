@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -11,11 +12,13 @@ class UsersController extends Controller
     {
         return view('users.create');
     }
-     public function show(User $user)
+
+    public function show(User $user)
     {
         return view('users.show', compact('user'));
     }
-     public function store(Request $request)
+
+    public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|max:50',
